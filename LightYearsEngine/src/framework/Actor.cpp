@@ -9,6 +9,12 @@ namespace ly
 	{
 
 	}
+
+	Actor::~Actor()
+	{
+		LOG("Actor Destroyed");
+	}
+
 	void Actor::BeginPlayInternal()
 	{
 		if (mHasBeganPlay)
@@ -17,6 +23,7 @@ namespace ly
 			BeginPlay();
 		}
 	}
+
 	void Actor::BeginPlay()
 	{
 		LOG("Actor begin play");
