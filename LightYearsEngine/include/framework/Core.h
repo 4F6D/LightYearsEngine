@@ -24,8 +24,6 @@ namespace ly
 	template<typename keyType, typename valueType, typename hasher = std::hash<keyType>>
 	using Dictionary = std::unordered_map<keyType, valueType, hasher>;
 
-
-
 	// MACRO for logging
 	#define LOG(M, ...) printf(M "\n", ##__VA_ARGS__)
 }
