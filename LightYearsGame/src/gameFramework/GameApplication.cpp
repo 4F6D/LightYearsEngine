@@ -9,14 +9,16 @@ ly::Application* GetApplication()
 
 namespace ly
 {
-	GameApplication::GameApplication()
+	GameApplication::GameApplication() :
+		Application{600, 980, "Light Years Demo Game", sf::Style::Close}
 	{
-		// Here happens the Game Programming Magic
+		// YOUR CODE GOES HERE
 
 
 		weak<World> newWorld = LoadWorld<World>();
 		newWorld.lock()->SpawnActor<Actor>();
 		actorToDestroy = newWorld.lock()->SpawnActor<Actor>();
+		actorToDestroy.lock()->SetTexture("C:/Users/rener/Desktop/Spaceship_DEMO.png");
 		counter = 0;
 	}
 	void GameApplication::Tick(float deltaTime)

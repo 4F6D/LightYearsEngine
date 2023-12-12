@@ -3,14 +3,15 @@
 #include "framework/World.h"
 
 namespace ly {
-	Application::Application() :
-		mWindow{ sf::VideoMode(1080,720), "Light Years" },
-		mTargetFrameRate{60.f},		// 60 for PC, 30 for Console
+	Application::Application(unsigned int windowWidth, unsigned int windowHeight, const std::string& title, sf::Uint32 windowStyle) : 
+		mWindow{ sf::VideoMode(windowWidth,windowHeight), title, windowStyle },
+		mTargetFrameRate{ 60.f },		// 60 for PC, 30 for Console
 		mTickClock{},
-		currentWorld{nullptr}
+		currentWorld{ nullptr }
 	{
 
 	}
+
 	void Application::Run()
 	{
 		mTickClock.restart();
@@ -66,16 +67,11 @@ namespace ly {
 	void Application::Render()
 	{
 		/* CAN BE OVERWRITTEN */
-
-		// Test rect
-		sf::RectangleShape rect{ sf::Vector2f{100,100} };
-		rect.setFillColor(sf::Color::Blue);
-		rect.setOrigin(50, 50);		// Set Origin in the center
-
-		// Drawing the Rect in the center
-		rect.setPosition(sf::Vector2f{ mWindow.getSize().x / 2.f , mWindow.getSize().y / 2.f });
-
-		mWindow.draw(rect);		// Drawing the Rectangle
+		
+		if (currentWorld)
+		{
+			currentWorld->Render(mWindow);
+		}
 	}
 
 	// Tick function
