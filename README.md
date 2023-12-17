@@ -11,6 +11,13 @@ Currently building a simple 2D Engine to create small 2D games for various devic
 | Dictionary | std::unordered_map<keyType, valueType, hasher> |
 | LOG("LOGGING TEXT %s", variable) | Just to log text to the console |
 
+### MathUtilities.h - Math Utilities
+| Code | Explanation |
+------- | --------
+| RotationToVector(float rotation) | Translating a rotation to a vector |
+| DegreesToRadians(float degrees) | Translating degrees to radians |
+| RadiansToDegrees(float radians) | Translating radians to degrees |
+
 The LightYearsEngine folder is the only folder needed to create a game.
 The Folder LightYearsGame is just the Demo game to show the capabilities of the Engine.
 
