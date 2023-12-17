@@ -19,19 +19,12 @@ namespace ly
 		newWorld.lock()->SpawnActor<Actor>();
 		actorToDestroy = newWorld.lock()->SpawnActor<Actor>();
 		actorToDestroy.lock()->SetTexture("C:/Users/rener/Desktop/Spaceship_DEMO.png");
+		actorToDestroy.lock()->SetActorLocation(sf::Vector2f(300.f, 490.f));
+		actorToDestroy.lock()->SetActorRotation(90.f);
 		counter = 0;
 	}
 	void GameApplication::Tick(float deltaTime)
 	{
-
-		// TESTING
-		counter += deltaTime;
-		if (counter > 2.f)
-		{
-			if (!actorToDestroy.expired())
-			{
-				actorToDestroy.lock()->Destroy();
-			}
-		}
+		
 	}
 }
