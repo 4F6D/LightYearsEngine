@@ -7,7 +7,7 @@ Core.h keyword alias -> real keyword.
 - List -> std::vector<T>
 - Map -> std::map<keyType, valueType, Pr>
 - Dictionary -> std::unordered_map<keyType, valueType, hasher>
-- LOG("LOGGING TEXT", variable)
+- LOG("LOGGING TEXT %s", variable)
 
 The LightYearsEngine folder is the only one need to create a game.
 The Folder LightYearsGame is just the Demo game to show the capabilities of the Engine.
